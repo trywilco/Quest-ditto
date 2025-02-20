@@ -1,0 +1,35 @@
+id: testing_and_verification
+learningObjectives:
+  - Test the DittoServiceImp class to ensure functionality.
+hints:
+  - Run the Android app and simulate data operations.
+  - Check if data syncs correctly and test conflict resolution cases.
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Oh, you’re still here? Trust, not verification—despite the order of the
+              universe, testing is essential. Verify that your implemented
+              DittoServiceImp functions as beautifully as a Swiss watch. You'll
+              need to showcase examples where your Ditto implementation
+              seamlessly syncs data and handles operations gracefully.
+          - text: Once completed, don't forget to open a PR. Even Ness demands proof every
+              now and then.
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: bot_message
+        params:
+          person: lucca
+          messages:
+            - text: Congrats, oh valiant triumphant quester! You've managed to wield the power
+                of Ditto with MongoDB into your Android app. Your adventure
+                doesn’t end here. We'll shout this achievement from the rooftops
+                and await user feedback like any good tech team. Great work!
+      - actionId: finish_step

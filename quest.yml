@@ -1,0 +1,25 @@
+id: ditto_mongodb_connector
+title: Implementing Ditto with MongoDB
+subtitle: "Seamless data sync: Ditto and MongoDB"
+description: In this quest, you'll explore the benefits of resilient device
+  connectivity using Ditto, specifically in the context of MongoDB. You’ll
+  implement a data layer in an Android app using Ditto, completing each function
+  in the DittoServiceImp class that implements a DittoService interface. You'll
+  realize the power of peer-to-peer data sync.
+skills:
+  - backend
+  - mobile
+  - databases
+steps:
+  - ditto_introduction
+  - ditto_mongodb_setup
+  - ditto_service_initialization
+  - handling_data_operations
+  - data_collision_resolution
+  - testing_and_verification
+level: intermediate
+type: PROMPT
+duration: 2.5
+repository: https://github.com/trywilco/ditto-android
+frameworks:
+  backend: null
