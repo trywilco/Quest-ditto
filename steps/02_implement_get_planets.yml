@@ -1,6 +1,6 @@
-id: ditto_service_initialization
+id: implement_get_planets
 learningObjectives:
-  - Implement the getPlanets flow in DittoServiceImp
+  - Master data querying and filtering using Ditto's collection API
 hints:
   - Look at the DittoServiceImp class in the com.ditto.guides.services package
   - The getPlanets method should query non-archived planets and order them by distance from the sun

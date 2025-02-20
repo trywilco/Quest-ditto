@@ -1,0 +1,30 @@
+id: quest_completion
+learningObjectives:
+  - Review the implementation of a complete offline-first data layer using Ditto
+hints: []
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Congratulations! You've successfully completed the Ditto implementation quest! 
+              Let's review what you've accomplished:
+          - text: "🌟 You've learned about Ditto's powerful offline-first architecture\n
+              🌟 Set up Ditto in an Android application\n
+              🌟 Implemented core data operations (get, add, update, archive)\n
+              🌟 Created a robust sync system with MongoDB\n
+              🌟 Built a resilient data layer that works even without constant connectivity"
+          - text: Your app now has superpowers - it can handle data operations seamlessly,
+              whether online or offline. This is exactly the kind of reliability that
+              modern apps need. Great job implementing these features!
+          - text: Keep exploring Ditto's capabilities, and remember - with great power
+              comes great responsibility (and fantastic data sync)! 🚀
+    - actionId: ready_message
+      params:
+        person: lucca
+trigger:
+  type: user_ready_response
+  flowNode:
+    do:
+      - actionId: finish_step

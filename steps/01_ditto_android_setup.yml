@@ -1,6 +1,6 @@
-id: ditto_mongodb_setup
+id: ditto_android_setup
 learningObjectives:
-  - Set up your Android app project.
+  - Set up and configure Ditto in an Android application environment
 hints:
   - Open the app project in Android Studio and start the project, you can use the Readme file for guidance.
   - Check Ditto's official documentation for setup examples.

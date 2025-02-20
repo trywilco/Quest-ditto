@@ -1,0 +1,33 @@
+id: implement_add_planet
+learningObjectives:
+  - Learn how to create and persist new documents in Ditto collections
+hints:
+  - Look at the DittoServiceImp class in the com.ditto.guides.services package
+  - The addPlanet method should create a new planet document in the collection
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Great job implementing getPlanets! Now let's move on to implementing the
+              `addPlanet` method in `DittoServiceImp`.
+          - text: You'll find the addPlanet method already stubbed out in the same class.
+              This method needs to handle creating new planet records in your Ditto collection.
+          - text: Once you've implemented addPlanet, create a pull request with your changes.
+              Make sure your implementation properly handles the document creation and
+              syncs correctly with MongoDB.
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    do:
+      - actionId: github_pr_review
+        params:
+          messages:
+            person: lucca
+    switch:
+      key: ${{eventType}}
+      cases:
+        github_pr_merged:
+          do:
+            - actionId: finish_step

@@ -12,11 +12,12 @@ skills:
   - databases
 steps:
   - ditto_introduction
-  - ditto_mongodb_setup
-  - ditto_service_initialization
-  - handling_data_operations
-  - data_collision_resolution
-  - testing_and_verification
+  - ditto_android_setup
+  - implement_get_planets
+  - implement_add_planet
+  - implement_update_planet
+  - implement_archive_planet
+  - quest_completion
 level: intermediate
 type: PROMPT
 duration: 2.5

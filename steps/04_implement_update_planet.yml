@@ -1,0 +1,33 @@
+id: implement_update_planet
+learningObjectives:
+  - Master document update operations and error handling in Ditto
+hints:
+  - Look at the DittoServiceImp class in the com.ditto.guides.services package
+  - The updatePlanet method should find and update an existing planet document
+  - Make sure to handle the case when the planet doesn't exist
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Excellent progress! Now let's implement the `updatePlanet` method in `DittoServiceImp`.
+          - text: This method should find an existing planet by its ID and update its properties.
+              Remember to handle cases where the planet might not exist.
+          - text: Once you've implemented updatePlanet, submit a pull request for review.
+              Make sure your implementation correctly updates the document and handles
+              synchronization with MongoDB.
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    do:
+      - actionId: github_pr_review
+        params:
+          messages:
+            person: lucca
+    switch:
+      key: ${{eventType}}
+      cases:
+        github_pr_merged:
+          do:
+            - actionId: finish_step

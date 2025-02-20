@@ -1,0 +1,33 @@
+id: implement_archive_planet
+learningObjectives:
+  - Implement soft delete patterns using Ditto's document management
+hints:
+  - Look at the DittoServiceImp class in the com.ditto.guides.services package
+  - The archivePlanet method should update the 'archived' flag of a planet
+  - Remember to handle cases where the planet doesn't exist
+startFlow:
+  do:
+    - actionId: bot_message
+      params:
+        person: lucca
+        messages:
+          - text: Now for our final data operation - let's implement the `archivePlanet` method 
+              in `DittoServiceImp`.
+          - text: This method should find a planet by its ID and mark it as archived instead 
+              of deleting it. This is often better than permanent deletion for data integrity.
+          - text: Once you've implemented archivePlanet, submit your pull request. Make sure 
+              your implementation properly updates the archived status and syncs with MongoDB.
+trigger:
+  type: github_pr_lifecycle_status
+  flowNode:
+    do:
+      - actionId: github_pr_review
+        params:
+          messages:
+            person: lucca
+    switch:
+      key: ${{eventType}}
+      cases:
+        github_pr_merged:
+          do:
+            - actionId: finish_step

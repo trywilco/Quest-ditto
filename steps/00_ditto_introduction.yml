@@ -1,6 +1,6 @@
 id: ditto_introduction
 learningObjectives:
-  - Understand what Ditto is and its key benefits
+  - Understand the core concepts and benefits of Ditto's offline-first architecture
 hints:
 startFlow:
   do:
