@@ -24,20 +24,6 @@ trigger:
     do:
       - actionId: github_pr_review
         params:
-          solution: |
-            The getPlanets implementation should:
-            Creates a Flow that observes and emits changes to the planets collection in Ditto.
-            The method:
-            - Sets up a live query observer for the planets collection
-            - Emits a new list of planets whenever the data changes
-            - Automatically cleans up the observer when the flow is cancelled
-            The query:
-            - Returns all non-archived planets (isArchived = false)
-            - Orders the results by distance from the sun
-            - Transforms raw Ditto data into Planet objects
-
-            return A flow that emits updated lists of planets whenever changes occur in the collection
-            ```
           messages:
             person: lucca
     switch:
