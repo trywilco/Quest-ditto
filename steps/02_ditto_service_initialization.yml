@@ -18,9 +18,6 @@ startFlow:
           - text: Once you've implemented getPlanets, create a pull request so we can check
               your implementation before moving on to the other methods. Remember, we want
               to query only non-archived planets and order them by their distance from the sun.
-    - actionId: ready_message
-      params:
-        person: lucca
 trigger:
   type: github_pr_lifecycle_status
   flowNode:
@@ -29,35 +26,17 @@ trigger:
         params:
           solution: |
             The getPlanets implementation should:
-            1. Register a Ditto observer
-            2. Use DQL query
-            3. Pass isArchived parameter as false
-            4. Transform results to convert to Planet objects
-            6. Include proper cleanup in awaitClose
-            
-            Expected code structure (it shouldn't be exactly the same, just an example):
-            ```kotlin
-            ditto?.let {
-              planetObserver = it.store.registerObserver(
-                """
-                SELECT *
-                FROM planets
-                WHERE isArchived = :isArchived
-                ORDER BY orderFromSun
-                """,
-                mapOf("isArchived" to false)
-              ) { results ->
-                val planets = results.items.map { item ->
-                  Planet.fromMap(item.value)
-                }
-                trySend(planets)
-              }
-            }
+            Creates a Flow that observes and emits changes to the planets collection in Ditto.
+            The method:
+            - Sets up a live query observer for the planets collection
+            - Emits a new list of planets whenever the data changes
+            - Automatically cleans up the observer when the flow is cancelled
+            The query:
+            - Returns all non-archived planets (isArchived = false)
+            - Orders the results by distance from the sun
+            - Transforms raw Ditto data into Planet objects
 
-            awaitClose {
-              planetObserver?.close()
-              planetObserver = null
-            }
+            return A flow that emits updated lists of planets whenever changes occur in the collection
             ```
           messages:
             person: lucca

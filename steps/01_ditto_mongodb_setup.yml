@@ -13,7 +13,7 @@ startFlow:
           - text: Now that you understand what Ditto can do, let's get our hands dirty.
               First, you'll need to clone the [repository](${user.repository}) - I've prepared
               an Android project there for you to work with.
-          - text: "Clone the repository, open it in Android Studio, and :instructions[make sure you can run the app locally.]"
+          - text: "Clone the repository, open it in Android Studio, and :instruction[make sure you can run the app locally.]"
           - text: Once you have the app running, we'll integrate Ditto to enable that powerful
               offline-first synchronization we talked about. You'll see how Ditto makes
               it easy to handle data operations even when network connectivity is unreliable.

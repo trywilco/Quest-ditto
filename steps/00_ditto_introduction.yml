@@ -10,7 +10,7 @@ startFlow:
         messages:
           - text: Welcome to the fascinating world of resilient data synchronization! Before we dive into the technical implementation, let's understand what makes Ditto special.
           - text: "[Ditto](https://www.ditto.live/about) is a powerful peer-to-peer database that enables real-time sync between devices, even without constant internet connectivity. Think of it as your data's guardian angel – whether you're offline, online, or somewhere in between, your data stays consistent and available."
-          - text: "Some key benefits include offline-first architecture, automatic conflict resolution, and seamless MongoDB integration. Perfect for apps that need to work reliably in challenging network conditions! Check out some amazing [use cases here](https://www.ditto.live/uses)."
+          - text: "Some key benefits include offline-first architecture, automatic conflict resolution, and seamless MongoDB integration. Perfect for apps that need to work reliably in challenging network conditions! Check out some amazing [use cases here](https://www.ditto.live/customers)."
           - text: In this quest, you'll learn how to implement Ditto in an Android app, connect it with MongoDB, handle data operations, and manage conflict resolution. You'll build a robust offline-first data layer that keeps working even when the internet doesn't.
           - text: Are you ready to master the art of resilient data synchronization with Ditto?
     - actionId: ready_message
